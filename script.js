@@ -85,3 +85,27 @@ videoSoundBtn?.addEventListener('click', async () => {
 });
 
 updatePlayButton();
+
+// Franchise WhatsApp inquiry form
+function sendFranchiseWhatsApp(event){
+  event.preventDefault();
+  const name=document.getElementById('frName')?.value.trim()||'';
+  const mobile=document.getElementById('frMobile')?.value.trim()||'';
+  const city=document.getElementById('frCity')?.value.trim()||'';
+  const type=document.getElementById('frType')?.value||'';
+  const message=document.getElementById('frMessage')?.value.trim()||'';
+  const text=`Hello, I want franchise/dealership details for Swad Amrutam Chai.%0A%0AName: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(mobile)}%0ACity/Area: ${encodeURIComponent(city)}%0ABusiness Type: ${encodeURIComponent(type)}%0AMessage: ${encodeURIComponent(message)}`;
+  window.open(`https://wa.me/917041605005?text=${text}`,'_blank');
+}
+
+// Contact WhatsApp inquiry form
+function sendContactWhatsApp(event){
+  event.preventDefault();
+  const name=document.getElementById('ctName')?.value.trim()||'';
+  const mobile=document.getElementById('ctMobile')?.value.trim()||'';
+  const city=document.getElementById('ctCity')?.value.trim()||'';
+  const type=document.getElementById('ctType')?.value||'';
+  const message=document.getElementById('ctMessage')?.value.trim()||'';
+  const text=`Hello Swad Amrutam Chai,%0AI want to contact you.%0A%0AName: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(mobile)}%0ACity/Area: ${encodeURIComponent(city)}%0AInquiry Type: ${encodeURIComponent(type)}%0AMessage: ${encodeURIComponent(message)}`;
+  window.open(`https://wa.me/917041605005?text=${text}`,'_blank');
+}
